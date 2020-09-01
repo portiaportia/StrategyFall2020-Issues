@@ -20,6 +20,7 @@ public class Something {
 	}
   }
 	
+//Use !
   public void turnover() {
 		if(offence == true) {
 			offence = false;
@@ -63,4 +64,23 @@ public String play() {
 		  return offenceBehavior.play();
       return "";
  }
+	
+   //Put {}
+   if(rand == 0)
+            defenceBehavior = new ChasePuckBehavior();
+        else
+            defenceBehavior = new BlockBehavior();
+	
+//Use ==
+public String play() {
+		if (offence = true) {
+			return this.offenceBehaviors.play();
+		} else {
+			return this.defenceBehavior.play();
+		}
+	}
 }
+
+//Add protected keyword for #
+DefenseBehavior df;
+OffenseBehavior off;
