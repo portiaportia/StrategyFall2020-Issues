@@ -1,4 +1,25 @@
 public class Something {
+	
+
+   public Forward(String name) {
+	super(name);
+	Random rOff = new Random();
+	int rOffInt = rOff.nextInt(2);
+	if(rOffInt == 0) {
+		offenceBehavior = new PassBehavior();
+	} else if(rOffInt == 1) {
+		offenceBehavior = new ShootBehavior();
+	}
+	
+	Random rDef = new Random();
+	int rDefInt = rDef.nextInt(2);
+	if(rDefInt == 0) {
+		defenceBehavior = new ChasePuckBehavior();
+	} else if(rDefInt == 1) {
+		defenceBehavior = new BlockBehavior();
+	}
+  }
+	
   public void turnover() {
 		if(offence == true) {
 			offence = false;
@@ -33,4 +54,13 @@ public class Something {
 				// System.out.println("error");
 				return "error";
 		}
+
+//No need for checking for Null
+public String play() {
+	if(defenceBehavior != null && offense == false)
+		  return defenceBehavior.play();
+	  if(offenceBehavior != null && offense == true)
+		  return offenceBehavior.play();
+      return "";
+ }
 }
